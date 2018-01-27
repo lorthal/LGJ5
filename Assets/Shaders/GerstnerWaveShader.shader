@@ -151,8 +151,8 @@
 					CrestVelocity = sqrt((G * _Length) / (2 * PI));
 
 					float2 uvs = i.uv_MainTex;
-					uvs.x += time / 150 * CrestVelocity * dirNormalized.x;
-					uvs.y += time / 150 * CrestVelocity * dirNormalized.y;
+					uvs.x += time / 500 * CrestVelocity * dirNormalized.x;
+					uvs.y += time / 500 * CrestVelocity * dirNormalized.y;
 					// float disp = time * CrestVelocity / 250.0;
 					// uvs += _Direction.xy * disp;
 					float3 normal = normalize(tex2D(_NormalMap, uvs).rgb * 2.0 - 1.0);
