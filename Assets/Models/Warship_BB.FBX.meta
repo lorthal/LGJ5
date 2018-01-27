@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 57ec394ca12381840bbc00fb6c2c1d2f
-timeCreated: 1517006525
+guid: 2b03cca5f39f7a344bfd8ec8d4d44ceb
+timeCreated: 1517012167
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -10,6 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Warship
+    7400000: warship
     9500000: //RootNode
   materials:
     importMaterials: 1
