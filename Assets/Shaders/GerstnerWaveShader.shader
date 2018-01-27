@@ -18,7 +18,7 @@
 		SubShader
 		{
 				Tags{ "RenderType" = "Transparent" }
-				LOD 300
+				//LOD 300
 
 				CGPROGRAM
 				#pragma surface surf StandardSpecular alpha vertex:vert

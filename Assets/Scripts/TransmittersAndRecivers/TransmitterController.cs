@@ -22,6 +22,14 @@ public class TransmitterController : MonoBehaviour
         particleCount = transmissionParticleSystem.particleCount;
     }
 
+    private void Update()
+    {
+        if (ReciverManager.Instance.GameState != ReciverManager.LevelState.Running && transmissionParticleSystem.isPlaying)
+        {
+            transmissionParticleSystem.Stop();
+        }
+    }
+
     private float GetDistanceMultiplier(Vector3 position)
     {
         float distance = Vector3.Distance(transform.position, position);
@@ -102,6 +110,15 @@ public class TransmitterController : MonoBehaviour
                 {
                     transmissionParticleSystem.Stop();
                 }
+            }
+        }
+
+        if (ReciverManager.Instance.GameState == ReciverManager.LevelState.Won ||
+            ReciverManager.Instance.GameState == ReciverManager.LevelState.Lost)
+        {
+            if (transmissionParticleSystem.isPlaying)
+            {
+                transmissionParticleSystem.Stop();
             }
         }
     }
