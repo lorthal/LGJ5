@@ -38,14 +38,17 @@ public class ReciverManager : MonoBehaviour
         get { return gameState; }
         set
         {
-            gameState = value;
-            if (value == LevelState.Paused || value == LevelState.Lost)
+            if (gameState != LevelState.Lost && gameState != LevelState.Won)
             {
-                Time.timeScale = 0;
-            }
-            else
-            {
-                Time.timeScale = 1;
+                gameState = value;
+                if (value == LevelState.Paused || value == LevelState.Lost || value == LevelState.Won)
+                {
+                    Time.timeScale = 0;
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                }
             }
         }
     }
@@ -89,6 +92,11 @@ public class ReciverManager : MonoBehaviour
     public float GetTimePercentage()
     {
         return timer / TimeToCompleteInSeconds;
+    }
+
+    public float GetCompletionPercentage()
+    {
+        return currentPackeges / requiredPackages;
     }
 
     public void SendPackage(float packages)
