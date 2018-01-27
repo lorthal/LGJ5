@@ -52,4 +52,9 @@ public class ShipController : MonoBehaviour
             Debug.Log("Game State: " + ReciverManager.Instance.GameState);
         }
     }
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
 }

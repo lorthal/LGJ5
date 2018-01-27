@@ -66,4 +66,9 @@ public class LanternsManager : MonoBehaviour
             spawned.transform.parent = transform;
         }
     }
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
 }

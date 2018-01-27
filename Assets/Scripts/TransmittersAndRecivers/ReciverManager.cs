@@ -114,4 +114,9 @@ public class ReciverManager : MonoBehaviour
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
 }

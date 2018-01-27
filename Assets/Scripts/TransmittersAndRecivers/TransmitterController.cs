@@ -14,12 +14,9 @@ public class TransmitterController : MonoBehaviour
     private SphereCollider sphere;
 
     private ParticleSystem.Particle[] particles;
-    private int particleCount;
-
     private void Start()
     {
         sphere = GetComponent<SphereCollider>();
-        particleCount = transmissionParticleSystem.particleCount;
     }
 
     private void Update()
