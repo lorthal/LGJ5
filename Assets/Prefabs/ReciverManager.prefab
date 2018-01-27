@@ -54,4 +54,5 @@ MonoBehaviour:
   TimeToCompleteInSeconds: 60
   Star3Percent: 0.75
   Star2Percent: 0.45
+  msgList: {fileID: 11400000, guid: 8d25e6044b7e1b44a97dc58b9079f3ae, type: 2}
   requiredPackages: 100

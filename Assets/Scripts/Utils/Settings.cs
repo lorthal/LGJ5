@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using UnityEngine;
+
+using Language = Utils.Language;
 
 class Settings
 {
@@ -18,12 +17,25 @@ class Settings
             return instance;
         }
     }
-
-    public Utils.Language CurrentLanguage;
+    
+    public Language CurrentLanguage;
 
     Settings()
     {
-        CurrentLanguage = Utils.Language.PL;
+        if (!PlayerPrefs.HasKey("Lang"))
+        {
+            CurrentLanguage = Language.ENG;
+            PlayerPrefs.SetInt("Lang", (int)CurrentLanguage);
+        }
+        else
+        {
+            CurrentLanguage = (Language)PlayerPrefs.GetInt("Lang");
+        }
+    }
+
+    public void ChageLanguage(Language lang)
+    {
+        CurrentLanguage = lang;
     }
 }
 

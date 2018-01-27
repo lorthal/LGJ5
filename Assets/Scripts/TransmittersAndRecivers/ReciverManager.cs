@@ -19,7 +19,7 @@ public class ReciverManager : MonoBehaviour
     [Range(0, 1)] public float Star3Percent;
     [Range(0, 1)] public float Star2Percent;
 
-    private Message msg;
+    public MessageList msgList;
 
     public float requiredPackages;
 
@@ -28,6 +28,8 @@ public class ReciverManager : MonoBehaviour
     private float timer;
 
     private LevelState gameState;
+
+    public Message Msg { get; private set; }
 
     public int StarRecived { get; private set; }
 
@@ -61,6 +63,7 @@ public class ReciverManager : MonoBehaviour
     {
         timer = TimeToCompleteInSeconds;
         StarRecived = 3;
+        Msg = msgList.GetMessage();
     }
 
     private void Update()
@@ -96,7 +99,6 @@ public class ReciverManager : MonoBehaviour
             {
                 gameState = LevelState.Won;
             }
-            Debug.Log(currentPackeges + "/" + requiredPackages + ", Game State: " + gameState);
         }
     }
 }
