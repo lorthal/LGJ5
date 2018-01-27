@@ -8,15 +8,35 @@ public class ReciverManager : MonoBehaviour
 
     private Message msg;
 
-    public int requiredPackages;
+    public float requiredPackages;
 
-    private int currentPackeges;
+    private float currentPackeges;
+
+    public bool levelCompleted { get; private set; }
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            levelCompleted = false;
+        }
+    }
+
+    public void SendPackage(float packages)
+    {
+        if (!levelCompleted)
+        {
+            if (currentPackeges < requiredPackages)
+            {
+                currentPackeges += packages;
+            }
+            
+            if(currentPackeges >= requiredPackages)
+            {
+                levelCompleted = true;
+            }
+            Debug.Log(currentPackeges + "/" + requiredPackages + ", Level completed: " + levelCompleted);
         }
     }
 }
