@@ -43,4 +43,13 @@ public class ShipController : MonoBehaviour
     {
         this.target = target;
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            ReciverManager.Instance.GameState = ReciverManager.LevelState.Lost;
+            Debug.Log("Game State: " + ReciverManager.Instance.GameState);
+        }
+    }
 }

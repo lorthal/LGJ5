@@ -39,7 +39,7 @@ public class ReciverManager : MonoBehaviour
         set
         {
             gameState = value;
-            if (value == LevelState.Paused)
+            if (value == LevelState.Paused || value == LevelState.Lost)
             {
                 Time.timeScale = 0;
             }
