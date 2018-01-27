@@ -5,6 +5,8 @@ public class ShipController : MonoBehaviour
     public float Speed;
     public float SteeringSpeed;
 
+    public Transform Reciver;
+
     private Rigidbody rb;
     private bool rotate;
 
