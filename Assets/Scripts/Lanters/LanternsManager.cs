@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class LanternsManager : MonoBehaviour
 {
-
+    public int maxLanternCount = 3;
     public float cooldownOnChangeLantern;
 
     public static LanternsManager Instance { get; private set; }
 
     public List<Lantern> lanters;
+
+    public GameObject lanternPrefab;
 
     private Lantern lightedLantern;
     private float cooldownTimer;
@@ -53,6 +55,15 @@ public class LanternsManager : MonoBehaviour
             lightedLantern.SetLightOn(true);
             canChange = false;
             cooldownTimer = 0;
+        }
+    }
+
+    public void SpawnLantern(Vector3 position)
+    {
+        if (lanters.Count < maxLanternCount)
+        {
+            GameObject spawned = Instantiate(lanternPrefab, position, Quaternion.identity);
+            spawned.transform.parent = transform;
         }
     }
 }
