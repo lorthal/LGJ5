@@ -99,7 +99,6 @@ public class ReciverManager : MonoBehaviour
             {
                 gameState = LevelState.Won;
             }
-            Debug.Log(currentPackeges + "/" + requiredPackages + ", Game State: " + gameState);
         }
     }
 }
