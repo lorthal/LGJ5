@@ -9,7 +9,7 @@ public class Message : ScriptableObject
     [SerializeField]
     private string Message_pl;
     [SerializeField]
-    private string Message_ang;
+    private string Message_eng;
 
     public string GetMessage()
     {
@@ -18,9 +18,9 @@ public class Message : ScriptableObject
             case Utils.Language.PL:
                 return Message_pl;
             case Utils.Language.ENG:
-                return Message_ang;
+                return Message_eng;
             default:
-                return Message_ang;
+                return Message_eng;
         }
     }
 }

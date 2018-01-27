@@ -1,10 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ReciverManager : MonoBehaviour
 {
+    public enum LevelState
+    {
+        Running,
+        Paused,
+        Won,
+        Lost
+    }
+
     public static ReciverManager Instance { get; private set; }
+
+    public float TimeToCompleteInSeconds;
+    [Range(0, 1)] public float Star3Percent;
+    [Range(0, 1)] public float Star2Percent;
 
     private Message msg;
 
@@ -12,20 +25,67 @@ public class ReciverManager : MonoBehaviour
 
     private float currentPackeges;
 
-    public bool levelCompleted { get; private set; }
+    private float timer;
+
+    private LevelState gameState;
+
+    public int StarRecived { get; private set; }
+
+    public LevelState GameState
+    {
+        get { return gameState; }
+        set
+        {
+            gameState = value;
+            if (value == LevelState.Paused)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+        }
+    }
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            levelCompleted = false;
+            gameState = LevelState.Running;
+        }
+    }
+
+    private void Start()
+    {
+        timer = TimeToCompleteInSeconds;
+        StarRecived = 3;
+    }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+
+        if ((timer / TimeToCompleteInSeconds) < Star3Percent && StarRecived == 3)
+        {
+            StarRecived--;
+        }
+
+        if ((timer / TimeToCompleteInSeconds) < Star2Percent && StarRecived == 2)
+        {
+            StarRecived--;
+        }
+
+        if (timer <= 0)
+        {
+            GameState = LevelState.Lost;
         }
     }
 
     public void SendPackage(float packages)
     {
-        if (!levelCompleted)
+        if (gameState == LevelState.Running)
         {
             if (currentPackeges < requiredPackages)
             {
@@ -34,9 +94,9 @@ public class ReciverManager : MonoBehaviour
             
             if(currentPackeges >= requiredPackages)
             {
-                levelCompleted = true;
+                gameState = LevelState.Won;
             }
-            Debug.Log(currentPackeges + "/" + requiredPackages + ", Level completed: " + levelCompleted);
+            Debug.Log(currentPackeges + "/" + requiredPackages + ", Game State: " + gameState);
         }
     }
 }

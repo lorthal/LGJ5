@@ -18,7 +18,7 @@ public class TransmitterController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && !ReciverManager.Instance.levelCompleted)
+        if (other.gameObject.CompareTag("Player") && ReciverManager.Instance.GameState == ReciverManager.LevelState.Running)
         {
             if (packages > 0)
             {
