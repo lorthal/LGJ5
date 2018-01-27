@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Lantern : MonoBehaviour
+public class Lantern : MonoBehaviour, IPointerClickHandler
 {
     public float lightCooldown;
 
@@ -15,11 +16,12 @@ public class Lantern : MonoBehaviour
     {
         LanternsManager.Instance.lanters.Add(this);
         cooldownTimer = 0;
+        LanternsManager.Instance.SetLightedLantern(this);
     }
 
     private void Update()
     {
-        if (lightOn)
+        if (lightOn && cooldownTimer >= 0.5f)
         {
             if (cooldownTimer < lightCooldown)
             {
@@ -36,13 +38,20 @@ public class Lantern : MonoBehaviour
     public void SetLightOn(bool isLighted)
     {
         lightOn = isLighted;
+
         for (int i = 0; i < lights.Length; i++)
         {
             lights[i].enabled = lightOn;
         }
+
         if (lightOn)
         {
             ShipController.Instance.ChangeDestination(transform);
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        LanternsManager.Instance.SetLightedLantern(this);
     }
 }

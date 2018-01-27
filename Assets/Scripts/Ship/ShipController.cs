@@ -3,6 +3,7 @@
 public class ShipController : MonoBehaviour
 {
     public float Speed;
+    public float SteeringSpeed;
 
     private Rigidbody rb;
     private bool rotate;
@@ -29,11 +30,13 @@ public class ShipController : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = transform.rotation * -transform.forward * Speed;
-
+        rb.velocity = transform.forward * Speed;
+        Debug.DrawRay(transform.position, transform.forward);
         if (target != null)
         {
-            transform.rotation = Quaternion.LookRotation(transform.position - new Vector3(target.position.x, transform.position.y, target.position.z)) * startRotation;
+
+            transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, Utils.GetPositionWithoutY(target.position) - Utils.GetPositionWithoutY(transform.position), SteeringSpeed * Time.deltaTime, 0.0f), Vector3.up);
+            
         }
     }
 
