@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLanternCount: 3
-  cooldownOnChangeLantern: 0
+  cooldownOnChangeLantern: 1
   lanters: []
   lanternPrefab: {fileID: 1959786189608200, guid: 8128f41f440a94545b2a1760b1c5e70c,
     type: 2}
