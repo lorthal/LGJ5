@@ -26,13 +26,13 @@ public class ShipController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         rb.velocity = transform.forward * Speed;
         if (target != null)
         {
 
-            transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, Utils.GetPositionWithoutY(target.position) - Utils.GetPositionWithoutY(transform.position), SteeringSpeed * Time.deltaTime, 0.0f), Vector3.up);
+            transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, Utils.GetPositionWithoutY(target.position) - Utils.GetPositionWithoutY(transform.position), SteeringSpeed * Time.fixedDeltaTime, 0.0f), Vector3.up);
             
         }
     }
