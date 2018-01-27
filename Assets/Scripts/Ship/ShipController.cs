@@ -7,7 +7,6 @@ public class ShipController : MonoBehaviour
 
     private Rigidbody rb;
     private bool rotate;
-    private Quaternion startRotation;
 
     private Transform target;
 
@@ -25,13 +24,11 @@ public class ShipController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        startRotation = transform.rotation;
     }
 
     void Update()
     {
         rb.velocity = transform.forward * Speed;
-        Debug.DrawRay(transform.position, transform.forward);
         if (target != null)
         {
 
