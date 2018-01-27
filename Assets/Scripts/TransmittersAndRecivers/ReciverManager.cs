@@ -86,6 +86,11 @@ public class ReciverManager : MonoBehaviour
         }
     }
 
+    public float GetTimePercentage()
+    {
+        return timer / TimeToCompleteInSeconds;
+    }
+
     public void SendPackage(float packages)
     {
         if (gameState == LevelState.Running)
