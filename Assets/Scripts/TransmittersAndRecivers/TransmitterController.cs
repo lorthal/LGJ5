@@ -6,15 +6,6 @@ public class TransmitterController : MonoBehaviour
 {
     public float packages;
     public float packegesSendPerSecond;
-    private float timer;
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            timer = 0;
-        }
-    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -26,9 +17,7 @@ public class TransmitterController : MonoBehaviour
 
                 ReciverManager.Instance.SendPackage(sendedPackages);
                 packages -= sendedPackages;
-                timer = 0;
             }
-
         }
     }
 }
