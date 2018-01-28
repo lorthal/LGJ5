@@ -4,27 +4,36 @@ using UnityEngine;
 
 public class TransmitterController : MonoBehaviour
 {
-    public float packages;
+    public float StartPackages;
+    private float packages;
     public float packegesSendPerSecond;
 
-    public ParticleSystem transmissionParticleSystem;
+    public ParticleSystem RangeParticleSystem;
+    public ParticleSystem TransmissionParticleSystem;
 
     public Vector2 DistanceMultiplierRange;
 
     private SphereCollider sphere;
 
     private ParticleSystem.Particle[] particles;
+
+    private Color rangeParticleStartColor;
     private void Start()
     {
         sphere = GetComponent<SphereCollider>();
+        rangeParticleStartColor = RangeParticleSystem.main.startColor.color;
+        packages = StartPackages;
     }
 
     private void Update()
     {
-        if (ReciverManager.Instance.GameState != ReciverManager.LevelState.Running && transmissionParticleSystem.isPlaying)
+        if (ReciverManager.Instance.GameState != ReciverManager.LevelState.Running && TransmissionParticleSystem.isPlaying)
         {
-            transmissionParticleSystem.Stop();
+            TransmissionParticleSystem.Stop();
         }
+        rangeParticleStartColor.a = packages / StartPackages;
+        var mainModule = RangeParticleSystem.main;
+        mainModule.startColor = rangeParticleStartColor;
     }
 
     private float GetDistanceMultiplier(Vector3 position)
@@ -51,9 +60,9 @@ public class TransmitterController : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && ReciverManager.Instance.GameState ==
             ReciverManager.LevelState.Running)
         {
-            if (packages > 0 && !transmissionParticleSystem.isPlaying)
+            if (packages > 0 && !TransmissionParticleSystem.isPlaying)
             {
-                transmissionParticleSystem.Play();
+                TransmissionParticleSystem.Play();
             }
         }
     }
@@ -63,9 +72,9 @@ public class TransmitterController : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && ReciverManager.Instance.GameState ==
             ReciverManager.LevelState.Running)
         {
-            if (transmissionParticleSystem.isPlaying)
+            if (TransmissionParticleSystem.isPlaying)
             {
-                transmissionParticleSystem.Stop();
+                TransmissionParticleSystem.Stop();
             }
         }
     }
@@ -82,30 +91,30 @@ public class TransmitterController : MonoBehaviour
                 float sendedPackages = packages - packegesPerFrame >= 0 ? packegesPerFrame : packages;
 
                 ParticleSystem.Particle[] particles =
-                    new ParticleSystem.Particle[transmissionParticleSystem.particleCount];
+                    new ParticleSystem.Particle[TransmissionParticleSystem.particleCount];
 
-                transmissionParticleSystem.GetParticles(particles);
+                TransmissionParticleSystem.GetParticles(particles);
 
                 for (int i = 0; i < particles.Length; i++)
                 {
                     ParticleSystem.Particle p = particles[i];
-                    p.rotation = Vector3.Angle(transmissionParticleSystem.transform.forward,
-                        targetPosition - transmissionParticleSystem.transform.position);
-                    p.position = Vector3.Lerp(transmissionParticleSystem.transform.position, targetPosition, 1 - (p.remainingLifetime/p.startLifetime));
+                    p.rotation = Vector3.Angle(TransmissionParticleSystem.transform.forward,
+                        targetPosition - TransmissionParticleSystem.transform.position);
+                    p.position = Vector3.Lerp(TransmissionParticleSystem.transform.position, targetPosition, 1 - (p.remainingLifetime/p.startLifetime));
 
                     particles[i] = p;
                 }
 
-                transmissionParticleSystem.SetParticles(particles, particles.Length);
+                TransmissionParticleSystem.SetParticles(particles, particles.Length);
 
                 ReciverManager.Instance.SendPackage(sendedPackages);
                 packages -= sendedPackages;
             }
             else
             {
-                if (transmissionParticleSystem.isPlaying)
+                if (TransmissionParticleSystem.isPlaying)
                 {
-                    transmissionParticleSystem.Stop();
+                    TransmissionParticleSystem.Stop();
                 }
             }
         }
@@ -113,9 +122,9 @@ public class TransmitterController : MonoBehaviour
         if (ReciverManager.Instance.GameState == ReciverManager.LevelState.Won ||
             ReciverManager.Instance.GameState == ReciverManager.LevelState.Lost)
         {
-            if (transmissionParticleSystem.isPlaying)
+            if (TransmissionParticleSystem.isPlaying)
             {
-                transmissionParticleSystem.Stop();
+                TransmissionParticleSystem.Stop();
             }
         }
     }
