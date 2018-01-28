@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -86,7 +86,8 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 58938771901383f429b7dcb7c73b64ad,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -1016,22 +1017,22 @@ Prefab:
     - target: {fileID: 114526511673094672, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.4044118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.39549094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.39549094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114866110670322434, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
