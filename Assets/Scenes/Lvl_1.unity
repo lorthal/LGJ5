@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -194,16 +194,6 @@ Prefab:
     - target: {fileID: 4860076268125974, guid: 836dc34ca1020934f822a18f14331ff5, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114528109821307488, guid: 836dc34ca1020934f822a18f14331ff5,
-        type: 2}
-      propertyPath: StartPackages
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114528109821307488, guid: 836dc34ca1020934f822a18f14331ff5,
-        type: 2}
-      propertyPath: packegesSendPerSecond
-      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 836dc34ca1020934f822a18f14331ff5, type: 2}
@@ -487,6 +477,11 @@ Prefab:
       propertyPath: WinGame
       value: 
       objectReference: {fileID: 1207765424}
+    - target: {fileID: 82935567393736208, guid: 9295e3b8a263ca444a6ad7296ba31fbf,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9295e3b8a263ca444a6ad7296ba31fbf, type: 2}
   m_IsPrefabParent: 0
@@ -575,16 +570,6 @@ Prefab:
     - target: {fileID: 4671922777378422, guid: d7852012cc5113f4fa502ee57b72e890, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114893182465886210, guid: d7852012cc5113f4fa502ee57b72e890,
-        type: 2}
-      propertyPath: cooldownOnChangeLantern
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114893182465886210, guid: d7852012cc5113f4fa502ee57b72e890,
-        type: 2}
-      propertyPath: maxLanternCount
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7852012cc5113f4fa502ee57b72e890, type: 2}
