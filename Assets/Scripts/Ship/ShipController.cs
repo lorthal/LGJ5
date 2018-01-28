@@ -56,6 +56,10 @@ public class ShipController : MonoBehaviour
             Particles.SetActive(false);
             ReciverManager.Instance.GameState = ReciverManager.LevelState.Lost;
             Debug.Log("Game State: " + ReciverManager.Instance.GameState);
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }
         }
     }
 

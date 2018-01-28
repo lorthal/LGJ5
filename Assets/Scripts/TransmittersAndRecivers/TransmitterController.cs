@@ -64,6 +64,11 @@ public class TransmitterController : MonoBehaviour
             {
                 TransmissionParticleSystem.Play();
             }
+
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }
         }
     }
 
@@ -76,6 +81,11 @@ public class TransmitterController : MonoBehaviour
             {
                 TransmissionParticleSystem.Stop();
             }
+        }
+
+        if (GetComponent<AudioSource>().isPlaying)
+        {
+            GetComponent<AudioSource>().Stop();
         }
     }
 
@@ -116,6 +126,11 @@ public class TransmitterController : MonoBehaviour
                 {
                     TransmissionParticleSystem.Stop();
                 }
+
+                if (GetComponent<AudioSource>().isPlaying)
+                {
+                    GetComponent<AudioSource>().Stop();
+                }
             }
         }
 
@@ -125,6 +140,11 @@ public class TransmitterController : MonoBehaviour
             if (TransmissionParticleSystem.isPlaying)
             {
                 TransmissionParticleSystem.Stop();
+            }
+
+            if (GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Stop();
             }
         }
     }

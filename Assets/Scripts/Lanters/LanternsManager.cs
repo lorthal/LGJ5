@@ -64,6 +64,7 @@ public class LanternsManager : MonoBehaviour
         {
             GameObject spawned = Instantiate(lanternPrefab, position, Quaternion.identity);
             spawned.transform.parent = transform;
+            GetComponent<AudioSource>().Play();
         }
     }
 
