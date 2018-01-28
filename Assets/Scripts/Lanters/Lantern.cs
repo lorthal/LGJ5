@@ -38,6 +38,7 @@ public class Lantern : MonoBehaviour, IPointerClickHandler
     public void SetLightOn(bool isLighted)
     {
         lightOn = isLighted;
+        GetComponent<AudioSource>().Play();
 
         for (int i = 0; i < lights.Length; i++)
         {

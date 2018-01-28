@@ -137,3 +137,5 @@ MonoBehaviour:
   lanters: []
   lanternPrefab: {fileID: 1959786189608200, guid: 8128f41f440a94545b2a1760b1c5e70c,
     type: 2}
+  CreateLatern: {fileID: 8300000, guid: e55d2ad7d3a5d2746bff583becf40b87, type: 3}
+  LanternNotAlowed: {fileID: 8300000, guid: 4e6e4e6b9fc941e4d81cb006697415f3, type: 3}

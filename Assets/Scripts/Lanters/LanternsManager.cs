@@ -18,6 +18,9 @@ public class LanternsManager : MonoBehaviour
     private float cooldownTimer;
     private bool canChange;
 
+    public AudioClip CreateLatern;
+    public AudioClip LanternNotAlowed;
+
     private void Awake()
     {
         lanters = new List<Lantern>();
@@ -64,6 +67,12 @@ public class LanternsManager : MonoBehaviour
         {
             GameObject spawned = Instantiate(lanternPrefab, position, Quaternion.identity);
             spawned.transform.parent = transform;
+            GetComponent<AudioSource>().clip = CreateLatern;
+            GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            GetComponent<AudioSource>().clip = LanternNotAlowed;
             GetComponent<AudioSource>().Play();
         }
     }
