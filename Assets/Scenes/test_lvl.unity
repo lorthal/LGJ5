@@ -256,6 +256,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 836dc34ca1020934f822a18f14331ff5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1112541652 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1021196765192016, guid: ca5b1f482cce6d642a6e725b94116f21,
+    type: 2}
+  m_PrefabInternal: {fileID: 2000615619}
+--- !u!1 &1295682961 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1066508645244666, guid: ca5b1f482cce6d642a6e725b94116f21,
+    type: 2}
+  m_PrefabInternal: {fileID: 2000615619}
 --- !u!1001 &1310420985
 Prefab:
   m_ObjectHideFlags: 0
@@ -565,6 +575,21 @@ Prefab:
     - target: {fileID: 4914618274180128, guid: 9295e3b8a263ca444a6ad7296ba31fbf, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114644526514192718, guid: 9295e3b8a263ca444a6ad7296ba31fbf,
+        type: 2}
+      propertyPath: GameOver
+      value: 
+      objectReference: {fileID: 1112541652}
+    - target: {fileID: 114644526514192718, guid: 9295e3b8a263ca444a6ad7296ba31fbf,
+        type: 2}
+      propertyPath: WinGame
+      value: 
+      objectReference: {fileID: 1295682961}
+    - target: {fileID: 114644526514192718, guid: 9295e3b8a263ca444a6ad7296ba31fbf,
+        type: 2}
+      propertyPath: requiredPackages
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9295e3b8a263ca444a6ad7296ba31fbf, type: 2}

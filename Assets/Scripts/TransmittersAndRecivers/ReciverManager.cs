@@ -21,6 +21,8 @@ public class ReciverManager : MonoBehaviour
 
     public MessageList msgList;
 
+    public GameObject GameOver, WinGame;
+
     public float requiredPackages;
 
     private float currentPackeges;
@@ -50,6 +52,16 @@ public class ReciverManager : MonoBehaviour
                     Time.timeScale = 1;
                 }
             }
+
+            if (value == LevelState.Lost)
+            {
+                GameOver.SetActive(true);
+            }
+
+            if (value == LevelState.Won)
+            {
+                WinGame.SetActive(true);
+            }
         }
     }
 
@@ -58,7 +70,7 @@ public class ReciverManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            gameState = LevelState.Running;
+            GameState = LevelState.Running;
         }
     }
 
@@ -101,7 +113,7 @@ public class ReciverManager : MonoBehaviour
 
     public void SendPackage(float packages)
     {
-        if (gameState == LevelState.Running)
+        if (GameState == LevelState.Running)
         {
             if (currentPackeges < requiredPackages)
             {
@@ -110,7 +122,7 @@ public class ReciverManager : MonoBehaviour
             
             if(currentPackeges >= requiredPackages)
             {
-                gameState = LevelState.Won;
+                GameState = LevelState.Won;
             }
         }
     }
