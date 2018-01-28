@@ -7,6 +7,8 @@ public class ShipController : MonoBehaviour
 
     public Transform Reciver;
 
+    public GameObject Warship, Destroyed, Particles;
+
     private Rigidbody rb;
     private bool rotate;
 
@@ -48,6 +50,10 @@ public class ShipController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            Warship.SetActive(false);
+            Destroyed.transform.parent = null;
+            Destroyed.SetActive(true);
+            Particles.SetActive(false);
             ReciverManager.Instance.GameState = ReciverManager.LevelState.Lost;
             Debug.Log("Game State: " + ReciverManager.Instance.GameState);
         }

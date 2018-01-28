@@ -25,9 +25,11 @@ public class ReciverManager : MonoBehaviour
 
     public float requiredPackages;
 
+    public float EndgameTime;
+
     private float currentPackeges;
 
-    private float timer;
+    private float timer, endGameTimer;
 
     private LevelState gameState;
 
@@ -43,7 +45,7 @@ public class ReciverManager : MonoBehaviour
             if (gameState != LevelState.Lost && gameState != LevelState.Won)
             {
                 gameState = value;
-                if (value == LevelState.Paused || value == LevelState.Lost || value == LevelState.Won)
+                if (value == LevelState.Paused)
                 {
                     Time.timeScale = 0;
                 }
@@ -55,12 +57,13 @@ public class ReciverManager : MonoBehaviour
 
             if (value == LevelState.Lost)
             {
-                GameOver.SetActive(true);
+                endGameTimer = 0;
             }
 
             if (value == LevelState.Won)
             {
                 WinGame.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
@@ -72,6 +75,7 @@ public class ReciverManager : MonoBehaviour
             Instance = this;
             GameState = LevelState.Running;
         }
+        Time.timeScale = 1.0f;
     }
 
     private void Start()
@@ -99,6 +103,16 @@ public class ReciverManager : MonoBehaviour
         {
             GameState = LevelState.Lost;
         }
+
+        if (GameState == LevelState.Lost)
+        {
+            if (endGameTimer >= EndgameTime)
+            {
+                GameOver.SetActive(true);
+                Time.timeScale = 0;
+            }
+            endGameTimer += Time.deltaTime;
+        }
     }
 
     public float GetTimePercentage()
@@ -119,8 +133,8 @@ public class ReciverManager : MonoBehaviour
             {
                 currentPackeges += packages;
             }
-            
-            if(currentPackeges >= requiredPackages)
+
+            if (currentPackeges >= requiredPackages)
             {
                 GameState = LevelState.Won;
             }
