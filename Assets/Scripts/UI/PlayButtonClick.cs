@@ -23,7 +23,7 @@ public class PlayButtonClick : MonoBehaviour
     {
         if (isMovingLeft)
         {
-            Levels.GetComponent<RectTransform>().anchoredPosition = Vector3.MoveTowards(Levels.GetComponent<RectTransform>().anchoredPosition, target, 100);
+            Levels.GetComponent<RectTransform>().anchoredPosition = Vector3.MoveTowards(Levels.GetComponent<RectTransform>().anchoredPosition, target, 5000 * Time.deltaTime);
             if (Levels.GetComponent<RectTransform>().anchoredPosition.x <= target.x)
             {
                 isMovingLeft = false;
@@ -33,7 +33,7 @@ public class PlayButtonClick : MonoBehaviour
 
         if (isMovingRight)
         {
-            Levels.GetComponent<RectTransform>().anchoredPosition = Vector3.MoveTowards(Levels.GetComponent<RectTransform>().anchoredPosition, target, 100);
+            Levels.GetComponent<RectTransform>().anchoredPosition = Vector3.MoveTowards(Levels.GetComponent<RectTransform>().anchoredPosition, target, 5000 * Time.deltaTime);
             if (Levels.GetComponent<RectTransform>().anchoredPosition.x >= target.x)
             {
                 isMovingRight = false;

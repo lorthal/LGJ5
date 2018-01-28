@@ -17,6 +17,6 @@ public class ParticleTest : MonoBehaviour
         gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("G", -Physics.gravity.y);
         gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_DeltaTime", Time.fixedUnscaledDeltaTime);
 
-        time += Time.unscaledDeltaTime;
+        time += Time.fixedUnscaledDeltaTime;
     }
 }

@@ -51,10 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d17243b20bb79c45b2b35819075f537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToCompleteInSeconds: 60
+  TimeToCompleteInSeconds: 25
   Star3Percent: 0.75
   Star2Percent: 0.45
   msgList: {fileID: 11400000, guid: 8d25e6044b7e1b44a97dc58b9079f3ae, type: 2}
   GameOver: {fileID: 0}
   WinGame: {fileID: 0}
-  requiredPackages: 100
+  requiredPackages: 40
+  EndgameTime: 2
