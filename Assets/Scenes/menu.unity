@@ -1315,22 +1315,22 @@ Prefab:
     - target: {fileID: 114526511673094672, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.4044118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.39549094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.39549094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114866110670322434, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
@@ -2743,22 +2743,22 @@ Prefab:
     - target: {fileID: 114526511673094672, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.4044118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.39549094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.39549094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114866110670322434, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
@@ -2892,22 +2892,22 @@ Prefab:
     - target: {fileID: 114526511673094672, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.4044118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.39549094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114023801308383278, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.39549094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114866110670322434, guid: 9e032851572be9145b3ae94e956abb74,
         type: 2}

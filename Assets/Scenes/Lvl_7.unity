@@ -86,7 +86,7 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 426051393d9316b4f9f8ee581b493d43,
+  m_LightingDataAsset: {fileID: 112000002, guid: 5237ef0470411fb48ac14aba98a9b1c3,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 18720348}
   - component: {fileID: 18720347}
   - component: {fileID: 18720346}
+  - component: {fileID: 18720349}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -201,6 +202,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 18720344}
   m_Mesh: {fileID: 4300000, guid: c75af0a0508c4fa4eb70295ce22334ae, type: 3}
+--- !u!65 &18720349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18720344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7619072, y: 0.26313627, z: 0.76080835}
+  m_Center: {x: 0.0040929015, y: 0.020816635, z: -0.019085526}
 --- !u!1001 &144431747
 Prefab:
   m_ObjectHideFlags: 0
@@ -777,7 +790,7 @@ Prefab:
     - target: {fileID: 114644526514192718, guid: 9295e3b8a263ca444a6ad7296ba31fbf,
         type: 2}
       propertyPath: TimeToCompleteInSeconds
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114644526514192718, guid: 9295e3b8a263ca444a6ad7296ba31fbf,
         type: 2}
@@ -787,7 +800,7 @@ Prefab:
     - target: {fileID: 114644526514192718, guid: 9295e3b8a263ca444a6ad7296ba31fbf,
         type: 2}
       propertyPath: Star3Percent
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 114644526514192718, guid: 9295e3b8a263ca444a6ad7296ba31fbf,
         type: 2}
@@ -802,7 +815,7 @@ Prefab:
     - target: {fileID: 114644526514192718, guid: 9295e3b8a263ca444a6ad7296ba31fbf,
         type: 2}
       propertyPath: Star2Percent
-      value: 0.25
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9295e3b8a263ca444a6ad7296ba31fbf, type: 2}
@@ -901,7 +914,7 @@ Prefab:
     - target: {fileID: 114893182465886210, guid: d7852012cc5113f4fa502ee57b72e890,
         type: 2}
       propertyPath: maxLanternCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7852012cc5113f4fa502ee57b72e890, type: 2}
