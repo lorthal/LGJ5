@@ -59,15 +59,22 @@ public class ReciverManager : MonoBehaviour
 
             if (value == LevelState.Lost)
             {
-                GetComponent<AudioSource>().clip = Lose;
-                GetComponent<AudioSource>().Play();
+                if (GetComponent<AudioSource>() != null)
+                {
+                    GetComponent<AudioSource>().clip = Lose;
+                    GetComponent<AudioSource>().Play();
+                }
+              
                 endGameTimer = 0;
             }
 
             if (value == LevelState.Won)
             {
-                GetComponent<AudioSource>().clip = Win;
-                GetComponent<AudioSource>().Play();
+                if (GetComponent<AudioSource>() != null)
+                {
+                    GetComponent<AudioSource>().clip = Win;
+                    GetComponent<AudioSource>().Play();
+                }
                 WinGame.SetActive(true);
                 Time.timeScale = 0;
             }
