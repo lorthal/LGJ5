@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -56,6 +57,25 @@ public class PlayButtonClick : MonoBehaviour
         {
             isMovingRight = true;
             target = new Vector3(0, 0, 0);
+        }
+    }
+
+    public void OnNextLevelClick()
+    {
+        string[] sceneNameSplited = SceneManager.GetActiveScene().name.Split('_');
+        int lvlNumber = int.Parse(sceneNameSplited[1]);
+
+        lvlNumber++;
+
+        string sceneName = sceneNameSplited[0] + "_" + lvlNumber;
+
+        if (Application.CanStreamedLevelBeLoaded(sceneName))
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene("menu");
         }
     }
 }

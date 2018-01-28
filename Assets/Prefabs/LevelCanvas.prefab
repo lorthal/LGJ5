@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 222802510447725444}
   - component: {fileID: 114403156046456278}
   - component: {fileID: 114185876462635462}
-  - component: {fileID: 114336335681755294}
+  - component: {fileID: 114383104864588902}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -1091,8 +1091,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114336335681755294}
-        m_MethodName: OnMenuButtonClick
+      - m_Target: {fileID: 114383104864588902}
+        m_MethodName: OnNextLevelClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1392,17 +1392,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114336335681755294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1285191196946202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 837b9201ec2395847874dfb03b11cb69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114343655474452764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1520,6 +1509,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114383104864588902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285191196946202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31047c7acb5c1bf4fa3a0b64bc44a852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: 
+  Levels: {fileID: 0}
 --- !u!114 &114400739304459596
 MonoBehaviour:
   m_ObjectHideFlags: 1
