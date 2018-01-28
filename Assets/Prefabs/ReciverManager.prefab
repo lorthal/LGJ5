@@ -140,3 +140,5 @@ MonoBehaviour:
   WinGame: {fileID: 0}
   requiredPackages: 40
   EndgameTime: 2
+  Lose: {fileID: 8300000, guid: ba2e3db53db62794ab3f80af24e7d512, type: 3}
+  Win: {fileID: 8300000, guid: 07a118c23afccce44945116b05863af3, type: 3}

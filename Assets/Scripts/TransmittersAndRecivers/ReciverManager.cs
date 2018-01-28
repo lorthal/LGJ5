@@ -27,6 +27,8 @@ public class ReciverManager : MonoBehaviour
 
     public float EndgameTime;
 
+    public AudioClip Lose, Win;
+
     private float currentPackeges;
 
     private float timer, endGameTimer;
@@ -57,11 +59,15 @@ public class ReciverManager : MonoBehaviour
 
             if (value == LevelState.Lost)
             {
+                GetComponent<AudioSource>().clip = Lose;
+                GetComponent<AudioSource>().Play();
                 endGameTimer = 0;
             }
 
             if (value == LevelState.Won)
             {
+                GetComponent<AudioSource>().clip = Win;
+                GetComponent<AudioSource>().Play();
                 WinGame.SetActive(true);
                 Time.timeScale = 0;
             }
