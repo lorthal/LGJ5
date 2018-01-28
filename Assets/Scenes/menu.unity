@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1371,7 +1371,6 @@ GameObject:
   - component: {fileID: 1094878395}
   - component: {fileID: 1094878394}
   - component: {fileID: 1094878397}
-  - component: {fileID: 1094878398}
   - component: {fileID: 1094878399}
   m_Layer: 0
   m_Name: generated_plane
@@ -1441,17 +1440,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f9effaaa20bb2c429e50ff7a14d89fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1094878398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1094878393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6167094998dba345969b88e45659a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!64 &1094878399
@@ -1959,6 +1947,10 @@ Prefab:
       propertyPath: Speed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1760971573433936, guid: a57bddfccc8c87b49b22850c722600e5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a57bddfccc8c87b49b22850c722600e5, type: 2}
   m_IsPrefabParent: 0
@@ -2074,6 +2066,10 @@ Prefab:
     - target: {fileID: 4914618274180128, guid: 9295e3b8a263ca444a6ad7296ba31fbf, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120195756298976, guid: 9295e3b8a263ca444a6ad7296ba31fbf, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9295e3b8a263ca444a6ad7296ba31fbf, type: 2}
@@ -2474,6 +2470,10 @@ Prefab:
     - target: {fileID: 4671922777378422, guid: d7852012cc5113f4fa502ee57b72e890, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437571716445320, guid: d7852012cc5113f4fa502ee57b72e890, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7852012cc5113f4fa502ee57b72e890, type: 2}
