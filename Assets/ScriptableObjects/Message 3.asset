@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccf1459b38ecdef45855ca44d014fd9b, type: 3}
-  m_Name: TestMessage
+  m_Name: Message 3
   m_EditorClassIdentifier: 
-  Message_pl: "Hej, uko\u0144czy\u0142e\u015B samouczek!"
-  Message_eng: You heard about Shelbi Vaughan? She won NACAC
+  Message_pl: 
+  Message_eng: Check engine!
